@@ -1,6 +1,12 @@
 (function ($) {
 	"use strict";
 
+	// preloader
+	$(window).load(function() {
+		//$("#loading").delay(2000).fadeOut(500);
+		$("#loading").fadeOut(500);
+	})
+
 	// meanmenu
 	$('#mobile-menu').meanmenu({
 		meanMenuContainer: '.mobile-menu',
@@ -15,7 +21,7 @@
 
 
 	// One Page Nav
-	var top_offset = $('.header-area').height() - 10;
+	var top_offset = $('.header-section').height() - 10;
 	$('.main-menu nav ul').onePageNav({
 		currentClass: 'active',
 		scrollOffset: top_offset,
@@ -131,17 +137,14 @@
 
 	// isotop
 
-	$('#container').imagesLoaded( function() {
-		// images have loaded
-		$('.grid').isotope({
-			itemSelector: '.portfolio-item',
-			percentPosition: true,
-			masonry: {
-				// use outer width of grid-sizer for columnWidth
-				columnWidth: '.portfolio-item'
-			}
-		});
-	});
+	var $grid = $('.portfolio-active').isotope({
+		itemSelector: '.grid-item',
+		percentPosition: true,
+		masonry: {
+			// use outer width of grid-sizer for columnWidth
+			columnWidth: 1
+		}
+	})
 	
 
 	// filter items on button click

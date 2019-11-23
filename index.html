@@ -27,9 +27,20 @@
 </head>
 
 <body>
+
+    <!-- loader -->
+    <div id="loading">
+        <div id="loading-center">
+            <div id="loading-center-absolute">
+                <div id="object"></div>
+            </div>
+        </div>        
+    </div>
+    <!-- loader end -->
+
     <!-- header start -->
     <header>
-        <div class="header-section">
+        <div class="header-section header-sticky">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-xl-3 d-flex align-items-center">`
@@ -41,13 +52,13 @@
                         <div class="main-menu text-center f-right">
                             <nav id="mobile-menu">
                                 <ul>
-                                    <li><a href="#">Home</a></li>
-                                    <li><a href="#">About</a></li>
-                                    <li><a href="#">Skills</a></li>
-                                    <li><a href="#">Services</a></li>
-                                    <li><a href="#">Portfolio</a></li>
-                                    <li><a href="#">Blog</a></li>
-                                    <li><a href="#">Contact</a></li>
+                                    <li><a href="#home">Home</a></li>
+                                    <li><a href="#about">About</a></li>
+                                    <li><a href="#services">Services</a></li>
+                                    <li><a href="#skills">Skills</a></li>
+                                    <li><a href="#portfolio">Portfolio</a></li>
+                                    <li><a href="#contact">Contact</a></li>
+                                    <li><a href="#blog">Blog</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -110,7 +121,7 @@
 
     </header>
     <!-- header end -->
-    <main>
+    <main id="home" >
 
         <!-- slider section start -->
 
@@ -148,7 +159,7 @@
         <!-- slider section end -->
 
         <!-- about section start -->
-        <section class="about-section pt-120 pb-120">
+        <div id="about" class="about-section pt-120 pb-90">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-6 col-lg-6">
@@ -183,11 +194,11 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
         <!-- about section end -->
 
         <!-- services section start -->
-        <section class="services-section pb-90">
+        <section id="services" class="services-section pb-90">
             <div class="container">
                 <div class="row border-top pt-120">
                     <div class="col-xl-4 col-lg-4">
@@ -262,7 +273,7 @@
         <!-- services section end -->
 
         <!-- skillset section start -->
-        <section class="skillset-section pt-120 pb-120">
+        <section id="skills" class="skillset-section pt-120 pb-120">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-6 col-lg-6">
@@ -337,7 +348,7 @@
         <!-- skillset section end -->
 
         <!-- portfolio section start -->
-        <!-- <section class="portfolio-section pt-120">
+        <section id="portfolio" class="portfolio-section pt-120">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-6 mb-40">
@@ -348,49 +359,62 @@
                             </h2>
                         </div>
                     </div>
-                    <div class="col-xl-6 mb-40"></div>
-                </div>
-
-                <div class="row">
-                    <div class="grid">
-                        <div class="col-xl-4 portfolio-item">
-                            <div class="portfolio">
-                                <img src="img/portfolio/01-1.jpg" alt="">
-                            </div>
-                        </div>
-                        <div class="col-xl-4 portfolio-item">
-                            <div class="portfolio">
-                                <img src="img/portfolio/02.jpg" alt="">
-                            </div>
-                        </div>
-                        <div class="col-xl-4 portfolio-item">
-                            <div class="portfolio">
-                                <img src="img/portfolio/04.jpg" alt="">
-                            </div>
-                        </div>
-                        <div class="col-xl-4 portfolio-item">
-                            <div class="portfolio">
-                                <img src="img/portfolio/05.jpg" alt="">
-                            </div>
-                        </div>
-                        <div class="col-xl-4 portfolio-item">
-                            <div class="portfolio">
-                                <img src="img/portfolio/06.jpg" alt="">
-                            </div>
-                        </div>
-                        <div class="col-xl-4 portfolio-item">
-                            <div class="portfolio">
-                                <img src="img/portfolio/04.jpg" alt="">
+                    <div class="col-xl-6 d-flex align-items-center justify-content-lg-end justify-content-center">
+                        <div class="portfolio-filter">
+                            <div class="portfolio-menu button-group">
+                                <button class="active" data-filter="*">All</button>
+                                <button data-filter=".web-design">Web Design</button>
+                                <button data-filter=".wordpress">WordPress</button>
+                                <button data-filter=".web-development">Web Development</button>
+                                <button data-filter=".app">Apps</button>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <div class="row portfolio-active">
+                    <div class="col-xl-8 col-lg-4 col-md-6 grid-item wordpress web-design">
+                        <div class="portfolio-item mb-30">
+                            <img src="img/portfolio/02.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="col-xl-4 grid-item web-development">
+                        <div class="portfolio-item mb-30">
+                            <img src="img/portfolio/01-1.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="col-xl-4 grid-item web-design app">
+                        <div class="portfolio-item mb-30">
+                            <img src="img/portfolio/04.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="col-xl-4 grid-item web-development wordpress">
+                        <div class="portfolio-item mb-30">
+                            <img src="img/portfolio/05.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="col-xl-4 grid-item web-development wordpress">
+                        <div class="portfolio-item mb-30">
+                            <img src="img/portfolio/06.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="col-xl-4 grid-item wordpress app">
+                        <div class="portfolio-item mb-30">
+                            <img src="img/portfolio/06.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="col-xl-4 grid-item app web-design">
+                        <div class="portfolio-item mb-30">
+                            <img src="img/portfolio/04.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
             </div>
-        </section> -->
+        </section>
         <!-- portfolio section end -->
 
         <!-- experience section start -->
-        <section class="experience-section pt-120 pb-90">
+        <section id="experience" class="experience-section pt-120 pb-90">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-8 offset-xl-2 col-lg-8 offset-lg-2">
@@ -513,7 +537,7 @@
         <!-- experience section end -->
 
         <!-- education section start -->
-        <section class="education-section pt-80 pb-120">
+        <section id="education" class="education-section pt-80 pb-120">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-5 col-lg-5">
@@ -578,7 +602,7 @@
         <!-- education section end -->
 
         <!-- team section start -->
-        <section class="team-section pb-90 pt-120">
+        <section id="team" class="team-section pb-90 pt-120">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-8 offset-xl-2 col-lg-8 offset-lg-2">
@@ -652,7 +676,8 @@
         <!-- team section end -->
 
         <!-- contact section start -->
-        <section class="contact-section pt-120 pb-80" data-background="img/map/map-bg.png">
+
+        <section id="contact" class="contact-section pt-120 pb-80" data-background="img/map/map-bg.png">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-8 offset-xl-2">
@@ -701,7 +726,7 @@
         <!-- contact section end -->
 
         <!-- fact section start -->
-        <section class="fact-section pt-120 pb-90">
+        <section id="fact" class="fact-section pt-120 pb-90">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-3 col-lg-3 col-md-6">
@@ -749,7 +774,7 @@
         <!-- fact section end -->
 
         <!-- testimonial section start -->
-        <section class="testimonial-section pt-120 pb-120">
+        <section id="testimonial" class="testimonial-section pt-120 pb-120">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
@@ -905,7 +930,7 @@
         <!-- testimonial section end -->
 
         <!-- news section start -->
-        <section class="news-section pt-120 pb-90">
+        <section id="blog" class="news-section pt-120 pb-90">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-8 offset-xl-2 col-lg-8 offset-lg-2">
@@ -1017,7 +1042,7 @@
     </main>
 
     <footer>
-        <section class="footer-section pb-50 pt-120">
+        <section id="footer" class="footer-section pb-50 pt-120">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-4 col-lg-4 col-md-6">
